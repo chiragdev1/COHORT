@@ -1,0 +1,133 @@
+# Welcome to Chai Cohort
+
+## Introduction to Chai Cohort
+
+Welcome to **Chai Cohort**, where innovation meets collaboration! 🚀 We are a galaxy of passionate individuals, orbiting around cutting-edge technology and out-of-this-world solutions. Our mission is to make an impact that echoes across the universe, fostering a culture of creativity, growth, and teamwork. 🌌
+
+At Chai Cohort, every idea matters, and every team member is a star contributing to our shared constellation of success.
+
+---
+
+## Welcome Message
+
+🌟 **Dear Star Performer,**
+
+Congratulations on joining the **Chai Cohort constellation**! You’re now part of a team that thrives on pushing boundaries, solving challenging puzzles, and achieving stellar goals. Let’s embark on this incredible journey together and create wonders. 💫
+
+Here’s to exploring new horizons and achieving cosmic success!  
+Warm Regards,  
+**The Chai Cohort Team**
+
+---
+
+## Guidelines for Git and GitHub
+
+Version control is your rocket fuel for efficient collaboration and progress tracking. Let’s navigate the Git and GitHub galaxy together:
+
+### **Git Basics**
+
+1. **Initialize Your Rocket:**
+   - Clone the repository: `git clone <repo-url>`
+2. **Branching Across Stars:**
+   - Create a branch: `git checkout -b <branch-name>`
+     - Example: `feature/add-login`, `bugfix/fix-api`
+3. **Committing Milestones:**
+   - Commit often with clear messages: `git commit -m "Fix: Resolve API timeout issue"`
+4. **Push for Orbit:**
+   - Push your branch to the remote repository: `git push origin <branch-name>`
+
+![Git Workflow](https://miro.medium.com/v2/resize:fit:1400/1*eND2XEDf7F3sCzDXbLsVAg.png)
+
+### **GitHub Workflow**
+
+1. **Launch a Pull Request (PR):**
+   - PRs are your tickets to peer-reviewed success. Include:
+     - Clear title and description.
+     - Reference related tickets or issues.
+   - Notify reviewers by assigning them in the PR.
+
+2. **Code Reviews:**
+   - Review assigned PRs within 24 hours.
+   - Provide actionable feedback or approve for merging.
+
+3. **Merge Like a Pro:**
+   - Merge only after approval and successful CI/CD checks.
+
+![Pull Request Example](https://docs.github.com/assets/images/help/pull_requests/pull-request-conversation.png)
+
+---
+
+## Ticket Management
+
+Our ticketing system is your flight plan to navigate tasks effectively:
+
+1. **Ticket Creation:**
+   - Create tickets for every task, bug, or enhancement.
+   - Add descriptive titles, detailed descriptions, and relevant attachments.
+
+2. **Prioritize Missions:**
+   - Label tickets as `High Priority`, `Medium Priority`, or `Low Priority` to define urgency.
+
+3. **Track Progress:**
+   - Move tickets through stages: `To Do`, `In Progress`, `Code Review`, `Done`.
+
+4. **Celebrate Closure:**
+   - Close tickets only when tasks are completed, tested, and approved.
+
+---
+
+## Debugging Process
+
+Debugging is your superpower to keep systems running smoothly. Here’s how to harness it:
+
+1. **Replicate the Problem:**
+   - Start by reproducing the bug in your local environment.
+
+2. **Analyze Logs:**
+   - Dive into server logs, application logs, or console output for error insights.
+
+3. **Use Stellar Tools:**
+   - Debug with Chrome DevTools, Postman, or IDE debuggers.
+
+4. **Collaborate:**
+   - Reach out for help or pair-program with teammates when stuck.
+
+5. **Document Fixes:**
+   - Log the root cause and resolution in the ticket for future reference.
+
+![Debugging Example](https://miro.medium.com/v2/resize:fit:1400/1*7tMsYoX2hS9f5En9sC_Keg.png)
+
+---
+
+## General Processes
+
+### **Daily Stand-ups**
+
+- Join stand-ups to share:
+  - Updates on your progress.
+  - Blockers you’re facing.
+  - Plans for the day.
+
+### **Code Standards**
+
+- Follow coding best practices as documented in our project wiki.
+- Write clean, maintainable, and well-documented code.
+- Run tests to validate functionality before pushing.
+
+### **Communication Protocol**
+
+- Use Slack for quick discussions.
+- Use Confluence or the knowledge base for detailed documentation.
+
+---
+
+## Resources for Your Journey
+
+- **Company Wiki:** Access all processes and tools.
+- **Onboarding Checklist:** Complete your first-week tasks step by step.
+- **Mentor Program:** Reach out to your mentor for guidance and support.
+
+---
+
+Thank you for joining the Chai Cohort family. Together, we’ll reach for the stars and beyond! 🌠
+
