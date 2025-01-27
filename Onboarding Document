@@ -36,8 +36,6 @@ Think of Git as your tea recipe book and GitHub as the shelf where you store all
 4. **Share with the Team:**
    - Push it to the repository: `git push origin <branch-name>`
 
-![Git Basics](https://miro.medium.com/v2/resize:fit:1400/1*eND2XEDf7F3sCzDXbLsVAg.png)
-
 ### **☁️ GitHub Workflow (Sharing Recipes)**
 
 1. **Create a Pull Request:**
@@ -49,7 +47,6 @@ Think of Git as your tea recipe book and GitHub as the shelf where you store all
 3. **Merge:**
    - Bring your flavor into the main branch.
 
-![Pull Request Example](https://docs.github.com/assets/images/help/pull_requests/pull-request-conversation.png)
 
 ---
 

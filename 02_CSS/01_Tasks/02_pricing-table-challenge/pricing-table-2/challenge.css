@@ -1,0 +1,182 @@
+/* Challenge CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #1a1919;
+  color: whitesmoke;
+}
+
+.container {
+  /* Add your styles here */
+  background-color: #262525;
+  max-width: 1080px;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+.header {
+  /* Add your styles here */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  /* Add your styles here */
+  color: coral;
+}
+
+.subtitle {
+  /* Add your styles here */
+  opacity: 80%;
+}
+
+.pricing-container {
+  /* Add your styles here */
+  margin: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.pricing-card {
+  /* Add your styles here */
+  width: 300px;
+  max-width: 350px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color: rgba(128, 128, 128,.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all ease-in-out 150ms;
+}
+
+.pricing-card:hover {
+  /* Add your styles here */
+  transform: scale(1.03);
+}
+
+.card-header {
+  /* Add your styles here */
+  text-align: center;
+}
+
+.icon {
+  /* Add your styles here */
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.popular-tag {
+  /* Add your styles here */
+  position: absolute;
+  top: -20px;
+
+  background-color: yellow;
+  color: #262525;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.price-block {
+  /* Add your styles here */
+  background-color: rgba(160, 158, 158, 0.4);
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  padding: 15px 50px;
+}
+
+.price {
+  /* Add your styles here */
+  color: coral;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.period {
+  /* Add your styles here */
+  text-transform: uppercase;
+}
+
+.features {
+  /* Add your styles here */
+  padding: 20px 0;
+  list-style-type: none;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+}
+
+.features li {
+  /* Add your styles here */
+  margin-bottom: 15px;
+}
+
+.features li.disabled {
+  /* Add your styles here */
+  opacity: .6;
+}
+
+.join-btn {
+  /* Add your styles here */
+  border: 3px solid coral;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(26, 25, 25, .2);
+  color: coral;
+  font-weight: bold;
+  transition: all ease-in-out 150ms;
+
+}
+
+.join-btn:hover {
+  /* Add your styles here */
+  transform: scale(1.02);
+  background-color: coral;
+  color: whitesmoke;
+}
+
+/* Custom Class Modifiers */
+.warrior {
+  /* Add your styles here */
+  position: relative;
+  border-color: coral;
+  background-color: rgba(255, 127, 80, 0.4);
+}
+
+.champion {
+  /* Add your styles here */
+  border-color: yellow;
+  background-color: rgba(168, 168, 117, .5);
+}
+
+.champion .price {
+  /* Add your styles here */
+  color: yellow;
+}
+
+.champion .join-btn {
+  /* Add your styles here */
+  border-color: yellow;
+  color: yellow;
+}
+
+.champion .join-btn:hover {
+  /* Add your styles here */
+  background-color: yellow;
+  color: black;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Forms</title>
+</head>
+<body>
+   <!-- 1. **Add a phone number field to the form that accepts only numbers.**
+   2. **Include a **`**textarea**` ** for additional comments.**
+   3. **Add validation to ensure the password is at least 8 characters long using the **`**pattern**` ** attribute.**
+   4. **Style the form to center it on the page and add a background color. Styling part is optional but I Rrecommend to
+   try it** -->
+
+   <h1>Forms</h1>
+   <hr>
+
+   <form style="margin: 0 auto; width: fit-content; background-color: #242424; color: white; padding: 10px;">
+      <label for="name">Name</label>
+      <input type="text" id="name" required><br>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password"  minlength="8" required><br>
+
+      <label for="number">Age</label>
+      <input type="number" name="number" id="number"><br>
+
+      <textarea name="feedback" id="feedback" maxlength="50" rows="5"></textarea><br>
+      <input type="submit" value="Submit form">
+      
+   </form>
+
+</body>
+</html>
