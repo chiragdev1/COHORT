@@ -8,71 +8,143 @@
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
+  color: white;
+  background-color: rgb(21, 21, 21);
 }
 
 /* Navbar styles */
 .navbar {
   /* Add styles for the navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  font-weight: 600;
 }
 
 .logo {
   /* Add styles for the logo */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: lime;
 }
 
 .logo img {
   /* Add styles for the logo image */
+  border: 2px solid lime;
+  border-radius: 50%;
 }
 
 .menu a {
   /* Add styles for the navigation links */
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  transition: all ease-in-out 100ms;
+  padding: 5px 5px;
 }
 
 .menu a:hover {
   /* Add hover styles for navigation links */
+  color: lime;
 }
 
 /* Hero section styles */
 .hero {
   /* Add styles for the hero section */
+  position: relative;
+  background-image: url('./assets/chaicohort.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;  left: 0;
+  width: 100%;  height: 100%;
+  background-color: rgba(10, 10, 10, 0.75);
 }
 
 .hero-content {
   /* Add styles for the hero content container */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .hero-content h1 {
   /* Add styles for the hero heading */
+  color: lime;
 }
 
 .hero-content p {
   /* Add styles for the hero paragraph */
+  font-weight: 600;
 }
 
 .hero-content img {
   /* Add styles for the image in the hero section */
+  border-radius: 10px;
+  border: 2px solid lime;
 }
 
 .enroll-button {
   /* Add styles for the enroll button */
+  padding: 15px 30px ;
+  background-color: lime;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: all ease-in-out 150ms;
 }
 
 .enroll-button:hover {
   /* Add hover styles for the enroll button */
+  transform: scale(1.03);
+  background-color: limegreen;
 }
 
 /* Highlights section styles */
 .highlights {
   /* Add styles for the highlights section */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 40px 60px;
 }
 
 .highlight-card {
   /* Add styles for each highlight card */
+  background-color: rgba(78, 77, 77, 0.3);
+  padding: 10px 20px;
+  text-align: center;
+  max-width: 300px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column ;
+  gap: 10px;
 }
 
 .highlight-card h3 {
   /* Add styles for highlight card headings */
+  color: lime;
 }
 
 .highlight-card p {
-  /* Add styles for highlight card paragraphs */
+  font-size: 0.9rem;
 }
