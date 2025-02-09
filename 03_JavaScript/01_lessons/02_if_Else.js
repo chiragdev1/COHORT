@@ -1,4 +1,18 @@
 
+
+let numberofGuest = 7
+let pizzaSize;
+
+if(numberofGuest <= 2){
+   pizzaSize = 'small'
+}else if(numberofGuest <= 5) {
+   pizzaSize = 'medium'
+}else {
+   pizzaSize = 'large'
+}
+
+console.log(pizzaSize)
+
 function calculateGrade(score) {
    if(score >= 90){
       return 'A'
