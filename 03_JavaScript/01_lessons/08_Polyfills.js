@@ -164,13 +164,76 @@
       }
    }
    const reversedArray = array.myReverse()
-   console.log(reversedArray)
+   console.log(reversedArray) // [8,6,4,2]
 
 // SLICE
-// PUSH
-// POP 
-// SHIFT
-// UNSHIFT
+   if(!Array.prototype.mySlice){
+      Array.prototype.mySlice = function(start, end){
+         const slicedArray = []
+         start = start < 0 ? this.length + start : start
+         end = end < 0 ? this.length + end : end
 
+         for(let i=start;i<end; i++){
+            slicedArray.push(this[i])
+         }
+         return slicedArray
+      }
+   }
+
+   let testingArray = [0,1,2,3,4,5,6,7]
+   const subArray = testingArray.mySlice(2,-4)
+   const subArray2 = testingArray.slice(2,-4)
+   console.log(subArray)
+   console.log(subArray2)
+
+// PUSH
+   if(!Array.prototype.myPush){
+      Array.prototype.myPush = function(element){
+         this[this.length] = element
+      }
+   }
+   testingArray.myPush(88)
+   console.log('Pushing element' ,testingArray)
+
+// POP
+   if(!Array.prototype.myPop){
+      Array.prototype.myPop = function (){
+         if(this.length === 0)return undefined
+         const lastElement = this[this.length -1]
+         this.length = this.length - 1
+         return lastElement
+      }
+   }
+   testingArray.myPop()
+   console.log('popping element',testingArray, testingArray.length)
+// SHIFT
+   if(!Array.prototype.myShift){
+      Array.prototype.myShift = function (){
+         if(this.length === 0)return undefined
+         let firstElement = this[0]
+         for(let i=0;i<this.length-1;i++){
+            this[i] = this[i+1]
+         }
+         this.length -= 1
+         return firstElement
+      }
+   }
+   console.log('Array before shift', testingArray)
+   testingArray.myShift()
+   console.log('Array after shift', testingArray)
+   
+// UNSHIFT
+   if(!Array.prototype.myUnShift){
+      Array.prototype.myUnShift = function (element){
+         this.length += 1
+         for(let i=this.length-1;i>0;i--){
+            this[i] = this[i-1]
+         }
+         this[0] = element
+      }
+   }
+   console.log('Array before unshift', testingArray)
+   testingArray.myUnShift(99)
+   console.log('Array after unshift', testingArray)
 
 let doablePolyFills = ['forEach','map','filter','reduce','isArray','at','concat','includes','indexOf','join','reverse','slice','pop','push','unshift','shift',];
