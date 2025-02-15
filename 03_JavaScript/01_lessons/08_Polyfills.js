@@ -237,3 +237,122 @@
    console.log('Array after unshift', testingArray)
 
 let doablePolyFills = ['forEach','map','filter','reduce','isArray','at','concat','includes','indexOf','join','reverse','slice','pop','push','unshift','shift',];
+
+const toBeDonePolyfills = ['flat', 'flatMap', 'entries', 'copyWithin', 'fill', 'find', 'findIndex', 'findLast', 'findLastIndex', 'keys','values', 'lastIndexOf', 'reduceRight', 'some', 'toLocaleString', 'toReversed', 'toSorted', 'toSpliced', 'toString', 'with']
+
+// FIND
+   if(!Array.prototype.myFind){
+      Array.prototype.myFind = function(userFn){
+         let result;
+         for(let i=0; i<this.length; i++){
+            if(userFn(this[i],i)){
+               result = this[i];
+               break;
+            }
+            
+         }
+         return result;
+      }
+   }
+   const nums = [0,1,2,3,4,5,6,7,8,9]
+   console.log(nums.myFind((item) => item > 7)) // 8
+   console.log(nums.myFind((item) => item > 99)) // undefined
+
+
+// FINDINDEX
+   if(!Array.prototype.myFindIndex){
+      Array.prototype.myFindIndex = function(userFn){
+         let index = -1
+         for(let i=0;i<this.length;i++){
+            if(userFn(this[i],i)){
+               index = i
+               break
+            }
+         }
+         return index
+      }
+   }
+   console.log(nums.myFindIndex((num) => num > 4)) // 5
+   console.log(nums.myFindIndex((num) => num > 46)) // undefined
+
+
+// FINDLAST
+   if(!Array.prototype.myFindLast){
+      Array.prototype.myFindLast = function(userFn){
+         let result
+         for(let i=this.length -1;i>=0; i--){
+            if(userFn(this[i],i)){
+               result = this[i]
+               break
+            }
+         }
+         return result
+      }
+   }
+   console.log(nums.myFindLast( (num) => num < 5)) // 4
+   console.log(nums.myFindLast( (num) => num < 55)) // 9
+   console.log(nums.myFindLast( (num) => num > 55)) // undefined
+
+
+// FINDLASTINDEX
+   if(!Array.prototype.myFindLastIndex){
+      Array.prototype.myFindLastIndex = function(userFn){
+         let index = -1
+         for(let i=this.length-1; i>=0; i--){
+            if(userFn(this[i], i)){
+               index = i
+               break
+            }
+         }
+         return index
+      }
+   }
+   console.log(nums.myFindLastIndex((num) => num > 4)) // 9
+   console.log(nums.myFindLastIndex((num) => num > 46)) // -1
+// LASTINDEXOF
+   if(!Array.prototype.myLastIndexOf){
+      Array.prototype.myLastIndexOf = function(element){
+         let index = -1
+         for(let i=this.length-1;i>=0; i--){
+            if(this[i] == element){
+               index = i
+               break
+            }
+         }
+         return index
+      }
+   }
+   console.log(nums.myLastIndexOf(7)); // 7
+   console.log(nums.myLastIndexOf(77)); // -1
+   
+// REDUCERIGHT
+   if(!Array.prototype.myReduceRight){
+      Array.prototype.myReduceRight = function(userFn, initialValue){
+         if(this.length == 0){
+            throw new TypeError('Reduce of empty array with no initial value')
+         }
+         let accumulator = initialValue
+         for(let i=this.length-1;i>=0; i--){
+            accumulator = userFn(accumulator,this[i],i)
+         }
+         return accumulator;
+      }
+   }
+   console.log(nums.myReduceRight( (acc,curr) => acc + curr, 0))
+   console.log([].myReduceRight( (acc,curr) => acc + curr), 0) // TypeError: Reduce of empty array with no initial value
+
+
+// KEYS
+// VALUES
+// ENTRIES
+// TOLOCALESTRING
+// TOSTRING
+// WITH
+// FLAT
+// FLATMAP
+// TOREVERSED
+// TOSORTED
+// TOSPLICED
+// SOME
+// FILL 
+// COPYWITHIN 
