@@ -10,26 +10,96 @@ body{
    display: flex;
    justify-content: center;
    align-items: center;
+   background-color: black;
+   color: white;
 
    padding: 20px 40px;
 }
 
 .container{
+   position: relative;
    width: 70%;
-   min-height: 80%;
+   height: 85%;
+   max-height: 500px;
    border: 2px solid gray;
-   padding: 20px 40px;
+   padding: 20px 30px;
+   padding-top: 50px;
    border-radius: 10px;
 
    display: flex;
    flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+
+}
+
+#main-heading{
+   position: absolute;
+   top: 0;
 }
 
 .left , .right{
-   width: 50%;
+   width: 45%;
 }
+
+#star-container{
+   padding: 10px 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.star{
+   width: 35px;
+   fill: gray;
+   cursor: pointer;
+}
+
+.list-star{
+   width: 15px;
+}
+
 
 #review-input{
    padding: 10px 20px;
-  
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#submit-btn{
+   width: 100%;
+   border-radius: 10px;
+   
+}
+
+.btn{
+   padding: 10px 20px;
+   border: none;
+   outline: none;
+   font-weight: 600;
+   font-size: 1rem;
+}
+
+#reviews-list{
+   list-style-type: none;
+   height: 300px;
+   overflow-y: scroll;
+}
+#reviews-list::-webkit-scrollbar{
+   display: none;
+}
+
+.review{
+   margin: 15px 0;
+   padding: 5px 10px;
+   position: relative;
+   border: 1px solid gray;
+   border-radius: 10px;
+}
+
+.review-date{
+   position: absolute;
+   right: 5px;
+   top: 5px;
 }
