@@ -16,16 +16,19 @@
         class="task-input"
         placeholder="Add a new task..."
       />
-      <button id="addButton" class="add-button">Add</button>
+      <button id="addButton" onclick="addTask()" class="add-button">Add</button>
     </div>
 
     <ul id="taskList" class="task-list">
       <li class="empty-list">No tasks yet. Add one above!</li>
+      
     </ul>
 
     <div class="task-stats">
       <span id="totalTasks">Total tasks: 0</span>
       <span id="completedTasks">Completed: 0</span>
     </div>
+
+    <script src="./app.js"></script>
   </body>
 </html>

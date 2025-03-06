@@ -46,6 +46,7 @@ h1 {
 
 .task-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 12px 15px;
   background-color: white;
@@ -65,9 +66,15 @@ h1 {
     transform: translateY(0);
   }
 }
+.left{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
 
 .task-text {
   flex: 1;
+  font-weight: 600;
   margin-left: 10px;
 }
 

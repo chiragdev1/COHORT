@@ -12,12 +12,13 @@
     <div class="carousel-container" id="carousel">
       <div class="carousel-track" id="carouselTrack">
         <!-- Images will be added dynamically -->
+         <img src="" alt="" class="carousel-slide">
       </div>
 
       <div class="carousel-caption" id="caption"></div>
 
-      <button class="carousel-button prev-button" id="prevButton">←</button>
-      <button class="carousel-button next-button" id="nextButton">→</button>
+      <button class="carousel-button prev-button" onclick="prevSlide()" id="prevButton">←</button>
+      <button class="carousel-button next-button" onclick="nextSlide()" id="nextButton">→</button>
     </div>
 
     <div class="carousel-nav" id="carouselNav">
@@ -25,7 +26,7 @@
     </div>
 
     <div class="auto-play-control">
-      <button class="auto-play-button" id="autoPlayButton">
+      <button class="auto-play-button" onclick="startAutoPlay()" id="autoPlayButton">
         Start Auto Play
       </button>
       <span id="timerDisplay"></span>

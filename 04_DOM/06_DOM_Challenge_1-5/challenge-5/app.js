@@ -1,6 +1,15 @@
 /**
  * Write your challenge solution here
  */
+
+const carouselSlide = document.querySelector('.carousel-slide')
+const carouselCaption = document.querySelector('#caption')
+const carouselNav = document.getElementById("carouselNav")
+const autoPlayButton = document.getElementById("autoPlayButton")
+
+let currentIndex = 0
+let autoPlayInterval;
+
 // Image data
 const images = [
   {
@@ -20,3 +29,47 @@ const images = [
     caption: 'Urban City Skyline',
   },
 ];
+
+initialLoading()
+
+function initialLoading() {
+  carouselSlide.setAttribute('src', images[currentIndex].url)
+  carouselCaption.innerText = images[currentIndex].caption
+
+  for(let i=0;i<images.length;i++){
+    let div = document.createElement('div')
+    div.classList.add("carousel-indicator")
+    div.setAttribute('data-id', i)
+    if(i == 0) div.classList.add('active')
+    carouselNav.appendChild(div)
+  }
+}
+
+function nextSlide() {
+  currentIndex = currentIndex == (images.length - 1) ? 0 : ++currentIndex
+  updateSlide()
+}
+
+function prevSlide() {
+  currentIndex = currentIndex == 0 ? images.length-1 : --currentIndex
+  updateSlide()
+}
+
+function updateSlide() {
+  carouselSlide.setAttribute("src", images[currentIndex].url);
+  carouselCaption.innerText = images[currentIndex].caption;
+
+  // Update the carousel nav
+  carouselNav.querySelector('.carousel-indicator.active').classList.remove('active')
+  carouselNav.querySelector(`.carousel-indicator[data-id='${currentIndex}']`).classList.add('active')
+}
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval( () => {
+    nextSlide()
+  },3 * 1000)
+}
+
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval)
+}
