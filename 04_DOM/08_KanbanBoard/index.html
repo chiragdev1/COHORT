@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Kanban Board</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+   <div class="kanban-container">
+      <div class="board" id="todo-board">
+         <h2>To Do</h2>
+         <div class="task-container">
+            <ul class="task-list">
+               <li class="task" draggable="true">Task 1</li>
+               <li class="task" draggable="true">Task 2</li>
+               <li class="task" draggable="true">Task 3</li>
+               <li class="task" draggable="true">Task 3</li>
+               <li class="task" draggable="true">Task 3</li>
+               <li class="task" draggable="true">Task 3</li>
+               <li class="task" draggable="true">Task 3</li>
+               
+            </ul>
+         </div>
+         <button class="add-task-btn" data-board="todo">+ Add Task</button>
+
+      </div>
+      <div class="board" id="inprogress-board">
+         <h2>In Progress</h2>
+         <div class="task-container">
+            <ul class="task-list">
+               <li class="task" draggable="true">Task 4</li>
+               <li class="task" draggable="true">Task 5</li>
+            </ul>
+         </div>
+         <button class="add-task-btn" data-board="inprogress">+ Add Task</button>
+
+      </div>
+      <div class="board" id="completed-board">
+         <h2>Done</h2>
+         <div class="task-container">
+            <ul class="task-list">
+               <li class="task" draggable="true">Task 6</li>
+               <li class="task" draggable="true">Task 7</li>
+            </ul>
+         </div>
+         <button class="add-task-btn" data-board="completed">+ Add Task</button>
+
+      </div>
+   </div>
+   <script src="index.js"></script>
+</body>
+
+</html>

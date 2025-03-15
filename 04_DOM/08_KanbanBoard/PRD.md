@@ -1,0 +1,11 @@
+# Kanban Board
+- [ ] Create a Kanban board
+- [ ] Add tasks to the board
+- [ ] Prioritize tasks
+- [ ] Assign tasks to team members
+- [ ] Set deadlines for tasks
+- [ ] Monitor progress
+- [ ] Update board as needed
+- [ ] Complete tasks
+- [ ] Review board at end of project
+- [ ] Make improvements for next project
