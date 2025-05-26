@@ -1,0 +1,19 @@
+{
+  "name": "03_react",
+  "version": "1.0.0",
+  "description": "Learning react.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,html}\""
+  },
+  "keywords": [
+    "react",
+    "js"
+  ],
+  "author": "chirag",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
