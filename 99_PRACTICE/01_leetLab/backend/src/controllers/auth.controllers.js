@@ -183,5 +183,16 @@ export const logout = async (req, res) => {
 
 export const check = async (req, res) => {
    // todo return the user from req.body
+   const user = req.user
+   if(!user){
+      return res.status(400).json({
+         success: false,
+         message: "User not logged in"
+      })
+   }
    // todo send success, message, user in response
+   res.status(200).json({
+      success: true,
+      message: "User checked"
+   })
 }

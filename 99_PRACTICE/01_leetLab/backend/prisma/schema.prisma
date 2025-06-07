@@ -34,6 +34,8 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  problem Problem[]
 }
 
 model Problem {
@@ -42,12 +44,18 @@ model Problem {
   description String
   difficulty ProblemDifficulty
   tags String[]
-  constraints String
+  constraints String?
+  userId String
+  hints String?
+  editorial String?
   
+  examples Json
   testCases Json
   codeSnippets Json
   referenceSolution Json
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user User @relation( fields: [userId], references: [id], onDelete: Cascade)
 }
