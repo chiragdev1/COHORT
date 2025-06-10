@@ -1,7 +1,10 @@
 import { db } from "../libs/db.js";
 
 
-export const getAllProblems = async (req, res) => {}
+export const getAllProblems = async (req, res) => {
+   // get all the problems from db
+   // 
+}
 
 export const getProblemById = async (req, res) => {}
 
