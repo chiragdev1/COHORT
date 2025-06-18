@@ -1,18 +1,20 @@
 import express from 'express'
 
-import { deleteProblemById, getAllProblems, getProblemById, getSolvedProblems, updateProblemById } from '../controllers/problem.controllers.js'
+import { createProblem, deleteProblemById, getAllProblems, getProblemById, getSolvedProblems, updateProblemById } from '../controllers/problem.controllers.js'
+import { authenticateUser, checkAdmin } from '../middlewares/auth.middleware.js'
 
- const problemRoutes = express.Router()
+const problemRoutes = express.Router()
 
+problemRoutes.post('/create-problem', authenticateUser, checkAdmin, createProblem)
 
-problemRoutes.get('/problems', getAllProblems)
+problemRoutes.get('/get-all-problems',authenticateUser, getAllProblems)
 
-problemRoutes.get('/:id', getProblemById)
+problemRoutes.get('/get-problem/:id',authenticateUser, getProblemById)
 
-problemRoutes.put('/:id', updateProblemById)
+problemRoutes.put('/update-problem/:id',authenticateUser, checkAdmin, updateProblemById)
 
-problemRoutes.delete('/:id', deleteProblemById)
+problemRoutes.delete('/delete-problem/:id',authenticateUser, checkAdmin, deleteProblemById)
 
-problemRoutes.get('/solved-problems', getSolvedProblems)
+problemRoutes.get('/get-solved-problems', getSolvedProblems)
 
 export default problemRoutes
