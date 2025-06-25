@@ -18,7 +18,7 @@ app.use(cookieParser())
 
 // Routes
 app.use("/api/v1/auth", authRoutes)
-app.use("api/v1/problems", problemRoutes)
+app.use("/api/v1/problems", problemRoutes)
 
 // Home page/ Landing page
 app.get("/", (req, res) => {
