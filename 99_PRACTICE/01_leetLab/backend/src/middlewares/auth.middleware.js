@@ -39,13 +39,12 @@ export const authenticateUser = async( req, res, next) => {
    } catch (error) {
       console.log("Invalid user")
       // TODO write better error messages
-      res.status(401).json({
+      return res.status(401).json({
          success: false,
          message: "User not authenticated"
       })
    }
    // handle server side error in catch
-   next()
 }
 
 export const checkAdmin = async (req, res, next) => {
@@ -90,7 +89,7 @@ export const checkAdmin = async (req, res, next) => {
       // handle server side error
    } catch (error) {
       console.log("Error checking user role", error)
-      res.status(400).json({
+      return res.status(400).json({
          success: false,
          message: "Failed to check user role"
       })
