@@ -35,9 +35,9 @@ export const submitBatch = async (submissions) => {
    let response
    try {
        response = await axios.request(options);
-      console.log(response.data);
+      console.log("Response.data by submitBatch",response.data);
    } catch (error) {
-      console.error(error);
+      console.error("actch error in submitBatch",error);
    }
 
    // submissions should be an array of objects with language_id, source_code, stdin, expected_output
