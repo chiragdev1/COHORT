@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getJudge0LanguageId = (language) => {
-   console.log('inside getLanguageId')
+   // console.log('inside getLanguageId')
    const languageMap = {
       "JAVASCRIPT": 63,
       "JAVA": 62,
@@ -11,7 +11,7 @@ export const getJudge0LanguageId = (language) => {
 }
 
 export const submitBatch = async (submissions) => {
-   console.log("Inside submitBatch")
+   // console.log("Inside submitBatch")
    
 
    // Make a POST request to Judge0 API to submit batch of submissions
@@ -35,7 +35,7 @@ export const submitBatch = async (submissions) => {
    let response
    try {
        response = await axios.request(options);
-      console.log("Response.data by submitBatch",response.data);
+      // console.log("Response.data by submitBatch",response.data);
    } catch (error) {
       console.error("actch error in submitBatch",error);
    }
@@ -103,7 +103,7 @@ const sleep = (ms) => new Promise( (resolve) => setTimeout(resolve,ms))
 // }
 
 export const pollBatchResults = async (tokens) => {
-   console.log("inside pollBatchResults");
+   // console.log("inside pollBatchResults");
    // console.log("tokens", tokens)
    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -125,7 +125,7 @@ export const pollBatchResults = async (tokens) => {
             }
          );
 
-         console.log("pollBatch axios response:", response.data.submissions.status);
+         // console.log("pollBatch axios response:", response.data.submissions.status);
       } catch (error) {
          console.error("Polling error:", error.response?.data || error.message);
          break;
@@ -140,6 +140,6 @@ export const pollBatchResults = async (tokens) => {
 
       if (isAllDone) return results;
 
-      await sleep(1000);
+      await sleep(3000);
    }
 };

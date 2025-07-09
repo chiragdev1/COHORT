@@ -1,15 +1,16 @@
-import { pollBatchResults, submitBatch } from "../libs/judge0.libs";
+import { pollBatchResults, submitBatch } from "../libs/judge0.libs.js";
 
 
 export const executeCode = async (req, res) => {
    // extract userId from req.user
    const userId = req.user.id
 
-   // extract {source_code, language_id, stdin, expected_output, problem_id}
-   const {source_code, language_id, stdin, expected_output, problem_id} = req.body
+   // extract {source_code, language_id, stdin, expected_outputs, problem_id}
+   const {source_code, language_id, stdin, expected_outputs, problem_id} = req.body
 
    // validate testcases stdin isArray and length, expected_output isArray and length === stdin.length (400, invalid or missing testcases)
-   if(!Array.isArray(stdin) || stdin.length === 0 || Array.isArray(expected_output) || expected_output.length !== stdin.length) {
+   if(!Array.isArray(stdin) || stdin.length === 0 || !Array.isArray(expected_outputs) || expected_outputs.length !== stdin.length) {
+      console.log("stdin", stdin)
       return res.status(400).json({ error: "invalid or missing testcases" });
    }
 
