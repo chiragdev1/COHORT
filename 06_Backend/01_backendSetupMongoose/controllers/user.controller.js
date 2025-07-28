@@ -1,6 +1,5 @@
 import User from '../models/User.model.js'
-
-// Add profile, logout, forgotPassword, resetPassword
+import nodemailer from 'nodemailer'
 
 const registerUser = async (req, res) => {
    const {name, email, password} = req.body
@@ -39,9 +38,22 @@ const registerUser = async (req, res) => {
       console.log(token)
       if(!token){
          return res.status(401).json({
-            
+            success: false,
+            message: 'Registeration failed, error in generating token'
          })
       }
+      await user.updateOne({verificationToken: token})
+      await user.save()
+
+      // Send verification token via email
+      const transport = nodemailer.createTransport({
+         host: "live.smtp.mailtrap.io",
+         port: 587,
+         auth: {
+            user: process.env.MAILTRAP_USERNAME,
+            pass: process.env.MAILTRAP_PASSWORD,
+         },
+      });
 
       res.status(200).json({
          success: true,
@@ -63,6 +75,34 @@ const loginUser = async (req, res) => {
       success: true,
       message: 'Login Successful'
    })
+}
+
+const logoutUser = async (req, res,) => {
+
+}
+
+const forgotPassword = async (req, res) => {
+
+}
+
+const resetPassword = async (req, res) => {
+
+}
+
+const verifyEmail = async (req, res) => {
+
+}
+
+const resendVerificationEmail = async (req, res) => {
+
+}
+
+const getProfile = async (req, res) => {
+
+}
+
+const refreshAccessToken = async (req, res) => {
+
 }
 
 export { registerUser, loginUser}
