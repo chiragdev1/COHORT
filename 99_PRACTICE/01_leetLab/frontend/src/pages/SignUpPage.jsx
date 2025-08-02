@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import { Code, Eye, EyeOff, Loader2, Lock, Mail } from "lucide-react";
 import { z } from "zod";
+import AuthImagePattern from "../components/AuthImagePattern";
 
 const signUpSchema = z.object({
    email: z.string().email("Enter valid email"),
@@ -132,16 +133,16 @@ const SignUpPage = () => {
                   <button
                      type="submit"
                      className="btn btn-primary w-full"
-                     disabled={isSigninUp}
+                     // disabled={isSigningUp}
                   >
-                     {isSigninUp ? (
+                     {/* {isSigningUp ? (
                         <>
                            <Loader2 className="h-5 w-5 animate-spin" />
                            Loading...
                         </>
                      ) : (
                         "Sign in"
-                     )}
+                     )} */}
                   </button>
                </form>
 
