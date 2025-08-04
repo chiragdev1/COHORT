@@ -13,6 +13,8 @@ const signUpSchema = z.object({
 });
 
 const SignUpPage = () => {
+
+
    const [showPassword, setShowPassword] = useState(false);
 
    const {
@@ -20,6 +22,7 @@ const SignUpPage = () => {
       handleSubmit,
       formState: { errors },
    } = useForm({ resolver: zodResolver(signUpSchema) });
+
    const onSubmit = async (data) => {
       console.log(data);
    };
@@ -135,6 +138,8 @@ const SignUpPage = () => {
                      className="btn btn-primary w-full"
                      // disabled={isSigningUp}
                   >
+
+                     SignUp
                      {/* {isSigningUp ? (
                         <>
                            <Loader2 className="h-5 w-5 animate-spin" />
