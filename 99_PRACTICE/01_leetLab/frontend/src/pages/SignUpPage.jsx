@@ -28,7 +28,7 @@ const SignUpPage = () => {
          const res = await signup(data);
          console.log(res.data);
       } catch (error) {
-         console.log("Error signing up", error);
+         console.log("Error signing up--------", error);
       }
    };
 

@@ -144,7 +144,8 @@ export const login = async (req, res) => {
       // send Success response 200
       res.status(200).json({
          success: true,
-         message: "Logged In"
+         message: "Logged In",
+         user
       })
    } catch (error) {
 
@@ -192,7 +193,7 @@ export const check = async (req, res) => {
    // return the user from req.body
    const user = req.user
    if(!user){
-      return res.status(400).json({
+      return res.status(404).json({
          success: false,
          message: "User not logged in"
       })
@@ -200,6 +201,7 @@ export const check = async (req, res) => {
    // todo send success, message, user in response
    res.status(200).json({
       success: true,
-      message: "User checked"
+      message: "User checked",
+      user: user
    })
 }

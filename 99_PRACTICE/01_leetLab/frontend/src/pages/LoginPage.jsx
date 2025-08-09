@@ -13,7 +13,7 @@ const loginSchema = z.object({
 });
 
 const LoginPage = () => {
-   const { login, isLoginingIn } = useAuthStore();
+   const { login, isLoggingIn } = useAuthStore();
    const [showPassword, setShowPassword] = useState(false);
 
    const {
@@ -24,10 +24,11 @@ const LoginPage = () => {
 
    const onSubmit = async (data) => {
       try {
+          console.log("data-----",data);
          const res = await login(data);
          console.log(res.data);
       } catch (error) {
-         console.log("Error signing up", error);
+         console.log("Error Logging in ----------", error);
       }
    };
 
@@ -123,7 +124,7 @@ const LoginPage = () => {
                            Loading...
                         </>
                      ) : (
-                        "Sign in"
+                        "Log in"
                      )}
                   </button>
                </form>

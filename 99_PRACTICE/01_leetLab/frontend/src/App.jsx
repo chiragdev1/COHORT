@@ -5,6 +5,7 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/useAuthStore.js";
+import { Loader } from "lucide-react";
 function App() {
    const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
    useEffect(() => {
@@ -23,10 +24,12 @@ function App() {
       <div className="flex flex-col items-center justify-center">
          <Toaster position="top-center" />
          <Routes>
+         <Route path="/" element={<Layout/>}>
             <Route
-               path="/"
+               index
                element={authUser ? <HomePage /> : <Navigate to={"/login"} />}
             />
+         </Route>
             <Route
                path="/signup"
                element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />}
