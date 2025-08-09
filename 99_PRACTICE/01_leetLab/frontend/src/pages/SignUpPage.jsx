@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Code, Eye, EyeOff, Loader2, Lock, Mail } from "lucide-react";
 import { z } from "zod";
 import AuthImagePattern from "../components/AuthImagePattern";
+import { useAuthStore } from "../store/useAuthStore.js";
 
 const signUpSchema = z.object({
    email: z.string().email("Enter valid email"),
@@ -13,8 +14,7 @@ const signUpSchema = z.object({
 });
 
 const SignUpPage = () => {
-
-
+   const { signup, isSigningUp } = useAuthStore();
    const [showPassword, setShowPassword] = useState(false);
 
    const {
@@ -24,7 +24,12 @@ const SignUpPage = () => {
    } = useForm({ resolver: zodResolver(signUpSchema) });
 
    const onSubmit = async (data) => {
-      console.log(data);
+      try {
+         const res = await signup(data);
+         console.log(res.data);
+      } catch (error) {
+         console.log("Error signing up", error);
+      }
    };
 
    return (
@@ -136,18 +141,16 @@ const SignUpPage = () => {
                   <button
                      type="submit"
                      className="btn btn-primary w-full"
-                     // disabled={isSigningUp}
+                     disabled={isSigningUp}
                   >
-
-                     SignUp
-                     {/* {isSigningUp ? (
+                     {isSigningUp ? (
                         <>
                            <Loader2 className="h-5 w-5 animate-spin" />
                            Loading...
                         </>
                      ) : (
                         "Sign in"
-                     )} */}
+                     )}
                   </button>
                </form>
 
