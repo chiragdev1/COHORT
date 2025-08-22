@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore.js";
-import {User, Code, Logout} from "lucide-react";
-import LoginButton from "./LoginButton.jsx";
+import { User, Code, LogOut } from "lucide-react";
+import LogoutButton from "./LogoutButton.jsx";
 
 const Navbar = () => {
 
    const { authUser } = useAuthStore();   
-   console.log("authUser----", authUser);
+   console.log("navbar authUser----", authUser);
+
+   
    return (
       <nav className="sticky top-0 z-50 w-full py-5">
          <div className="flex w-full justify-between mx-auto max-w-4xl bg-black/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border border-gray-200/10 p-4 rounded-2xl">

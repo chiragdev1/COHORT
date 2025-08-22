@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuthStore } from "../store/useAuthStore";
 
-const LoginButton = ({ children }) => {
+const LogoutButton = ({ children }) => {
    const { logout } = useAuthStore();
    const onLogout = async () => {
       await logout();
@@ -13,4 +13,4 @@ const LoginButton = ({ children }) => {
    );
 };
 
-export default LoginButton;
+export default LogoutButton;
