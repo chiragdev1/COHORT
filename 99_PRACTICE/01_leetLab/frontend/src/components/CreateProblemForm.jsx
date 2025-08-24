@@ -58,7 +58,7 @@ const problemSchema = z.object({
       PYTHON: z.string().min(1, "Python code snippet is required"),
       JAVA: z.string().min(1, "Java solution is required"),
    }),
-   referenceSolutions: z.object({
+   referenceSolution: z.object({
       JAVASCRIPT: z.string().min(1, "JavaScript solution is required"),
       PYTHON: z.string().min(1, "Python solution is required"),
       JAVA: z.string().min(1, "Java solution is required"),
@@ -173,7 +173,7 @@ class Main {
   }
 }`,
    },
-   referenceSolutions: {
+   referenceSolution: {
       JAVASCRIPT: `/**
 * @param {number} n
 * @return {number}
@@ -417,7 +417,7 @@ public class Main {
 }
 `,
    },
-   referenceSolutions: {
+   referenceSolution: {
       JAVASCRIPT: `/**
    * @param {string} s
    * @return {boolean}
@@ -534,7 +534,7 @@ const CreateProblemForm = () => {
             PYTHON: "def solution():\n    # Write your code here\n    pass",
             JAVA: "public class Solution {\n    public static void main(String[] args) {\n        // Write your code here\n    }\n}",
          },
-         referenceSolutions: {
+         referenceSolution: {
             JAVASCRIPT: "// Add your reference solution here",
             PYTHON: "# Add your reference solution here",
             JAVA: "// Add your reference solution here",
@@ -567,11 +567,12 @@ const CreateProblemForm = () => {
    const onSubmit = async (value) => {
       try {
          setIsLoading(true);
+         // console.log("formValues------", value);
          const res = await axiosInstance.post(
             "/problems/create-problem",
             value
          );
-         console.log(res.data);
+         console.log("problem crated-----",res.data.problem);
          toast.success(res.data.message || "Problem Created successfully⚡");
          navigation("/");
       } catch (error) {
@@ -610,7 +611,7 @@ const CreateProblemForm = () => {
                            className={`btn join-item ${
                               sampleType === "DP" ? "btn-active" : ""
                            }`}
-                           onClick={() => setSampleType("array")}
+                           onClick={() => setSampleType("DP")}
                         >
                            DP Problem
                         </button>
@@ -915,7 +916,7 @@ const CreateProblemForm = () => {
                                     </h4>
                                     <div className="border rounded-md overflow-hidden">
                                        <Controller
-                                          name={`referenceSolutions.${language}`}
+                                          name={`referenceSolution.${language}`}
                                           control={control}
                                           render={({ field }) => (
                                              <Editor
@@ -936,11 +937,11 @@ const CreateProblemForm = () => {
                                           )}
                                        />
                                     </div>
-                                    {errors.referenceSolutions?.[language] && (
+                                    {errors.referenceSolution?.[language] && (
                                        <div className="mt-2">
                                           <span className="text-error text-sm">
                                              {
-                                                errors.referenceSolutions[
+                                                errors.referenceSolution[
                                                    language
                                                 ].message
                                              }
