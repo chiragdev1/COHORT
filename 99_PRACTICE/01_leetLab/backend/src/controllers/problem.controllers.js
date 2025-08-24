@@ -114,7 +114,7 @@ export const createProblem = async (req, res) => {
 
          const failedTest = results.find((r) => r.status.id !== 3);
          if (failedTest) {
-            console.log("Response sent for failedTest");
+            console.log("Response sent for failedTest", failedTest);
             return res.status(400).json({
                message: `Testcase failed for language ${language}`,
                status: failedTest.status,
@@ -149,15 +149,17 @@ export const createProblem = async (req, res) => {
       });
       console.log("newProblem", newProblem);
       if (!newProblem) {
-         console.log("Response sent for newProblem");
-         console.log("newProblem= ", newProblem);
          return res.status(500).json({
             success: false,
             message: "Problem not created",
          });
       }
 
-      res.status(201).json(newProblem);
+      res.status(201).json({
+         success: true,
+         message: "Problem created successfully",
+         problem: newProblem,
+      });
    } catch (error) {
       console.error("Error in createProblem:", error);
       res.status(500).json({

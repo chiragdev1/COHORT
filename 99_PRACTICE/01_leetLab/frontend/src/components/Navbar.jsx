@@ -7,7 +7,7 @@ import LogoutButton from "./LogoutButton.jsx";
 const Navbar = () => {
 
    const { authUser } = useAuthStore();   
-   console.log("navbar authUser----", authUser);
+   // console.log("navbar authUser----", authUser)
 
    
    return (
