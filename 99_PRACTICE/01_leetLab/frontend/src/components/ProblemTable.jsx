@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Bookmark, PencilIcon, Trash, TrashIcon, Plus } from "lucide-react";
 import { useActions } from "../store/useAction";
 import AddToPlaylistModal from "./AddToPlaylist";
-import CreatePlaylistModal from "./CreatePlaylistModal";
-import { usePlaylistStore } from "../store/usePlaylistStore";
+import CreatePlaylistModal from "./CreatePlaylistModal.jsx";
+import { usePlaylistStore } from "../store/usePlaylistStore.js";
 
 const ProblemsTable = ({ problems }) => {
    const { authUser } = useAuthStore();
@@ -133,7 +133,7 @@ const ProblemsTable = ({ problems }) => {
                <tbody>
                   {paginatedProblems.length > 0 ? (
                      paginatedProblems.map((problem) => {
-                        const isSolved = problem.solvedBy.some(
+                        const isSolved = problem.solvedProblems.some(
                            (user) => user.userId === authUser?.id
                         );
                         return (

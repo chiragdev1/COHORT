@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
 import { Toaster } from "react-hot-toast";
-import { useAuthStore } from "./store/useAuthStore.js";
+
+import HomePage from "./pages/HomePage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import SignUpPage from "./pages/SignUpPage";
+import { useAuthStore } from "./store/useAuthStore";
 import { Loader } from "lucide-react";
 import Layout from "./layout/Layout.jsx";
 import AdminRoute from "./components/AdminRoute.jsx";
-import AddProblemPage from "./pages/AddProblemPage.jsx";
-function App() {
+import AddProblem from "./pages/AddProblemPage.jsx";
+import ProblemPage from "./pages/ProblemPage.jsx";
+
+const App = () => {
    const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+
    useEffect(() => {
       checkAuth();
    }, [checkAuth]);
@@ -24,8 +28,8 @@ function App() {
    }
 
    return (
-      <div className="flex flex-col items-center justify-center">
-         <Toaster position="top-center" />
+      <div className="flex flex-col items-center justify-start ">
+         <Toaster />
          <Routes>
             <Route path="/" element={<Layout />}>
                <Route
@@ -35,25 +39,29 @@ function App() {
             </Route>
 
             <Route
+               path="/login"
+               element={!authUser ? <LoginPage /> : <Navigate to={"/"} />}
+            />
+
+            <Route
                path="/signup"
                element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />}
             />
+
             <Route
-               path="/login"
-               element={!authUser ? <LoginPage /> : <Navigate to={"/"} />}
+               path="/problem/:id"
+               element={authUser ? <ProblemPage /> : <Navigate to={"/login"} />}
             />
 
             <Route element={<AdminRoute />}>
                <Route
                   path="/add-problem"
-                  element={
-                     authUser ? <AddProblemPage /> : <Navigate to={"/"} />
-                  }
+                  element={authUser ? <AddProblem /> : <Navigate to="/" />}
                />
             </Route>
          </Routes>
       </div>
    );
-}
+};
 
 export default App;
