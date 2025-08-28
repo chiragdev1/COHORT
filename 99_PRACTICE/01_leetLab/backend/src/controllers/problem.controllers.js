@@ -173,7 +173,15 @@ export const getAllProblems = async (req, res) => {
    // trycatch
    try {
       // get all the problems from db
-      const problems = await db.problem.findMany();
+      const problems = await db.problem.findMany({
+         include: {
+            solvedProblems: {
+               where: {
+                  userId: req.user.id
+               }
+            }
+         }
+      });
 
       if (!problems) {
          return res.status(404).json({

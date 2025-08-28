@@ -150,6 +150,6 @@ export const pollBatchResults = async (tokens) => {
 
       if (isAllDone) return results;
 
-      await sleep(3000);
+      await sleep(500);
    }
 };
